@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Cargo;
+use App\Models\Marketing;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -19,5 +21,9 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        Marketing::factory(5)->create();
+
+        Cargo::factory(5)->create();
     }
 }
