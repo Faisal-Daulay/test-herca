@@ -1,0 +1,514 @@
+{
+	"info": {
+		"_postman_id": "b42d97dc-54a6-4a42-989f-192637008fc9",
+		"name": "Test Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16768669"
+	},
+	"item": [
+		{
+			"name": "Backend-API",
+			"item": [
+				{
+					"name": "Payment",
+					"item": [
+						{
+							"name": "Payment Store",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "marketing_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "cargo_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "total_balance",
+											"value": "205000000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/payments",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payments"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Payment Store",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "marketing_id",
+													"value": "5",
+													"type": "text"
+												},
+												{
+													"key": "cargo_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "total_balance",
+													"value": "205000000",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}/api/v1/payments",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"payments"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 01 Feb 2025 21:50:08 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 11,\n        \"marketing\": {\n            \"id\": 5,\n            \"name\": \"Warren Kuhn\"\n        },\n        \"cargo\": {\n            \"id\": 1,\n            \"name\": \"J&T\",\n            \"cargo_fee\": 15107\n        },\n        \"total_balance\": \"205000000\",\n        \"grand_total\": 205015107\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get All Payments",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/payments",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payments"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All Payments",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{base_url}}/api/v1/payments",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"payments"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 01 Feb 2025 21:59:36 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"marketing\": \"Warren Kuhn\",\n                \"month\": \"February\",\n                \"revenue\": \"205.015.107\",\n                \"commission_percentage\": 5,\n                \"commission_nominal\": \"10.250.755\"\n            },\n            {\n                \"marketing\": \"Tommie Anderson\",\n                \"month\": \"February\",\n                \"revenue\": \"80.011.749\",\n                \"commission_percentage\": 0,\n                \"commission_nominal\": \"0\"\n            },\n            {\n                \"marketing\": \"Tommie Anderson\",\n                \"month\": \"February\",\n                \"revenue\": \"138.015.107\",\n                \"commission_percentage\": 2.5,\n                \"commission_nominal\": \"3.450.378\"\n            },\n            {\n                \"marketing\": \"Fatima Mills Jr.\",\n                \"month\": \"February\",\n                \"revenue\": \"38.150\",\n                \"commission_percentage\": 0,\n                \"commission_nominal\": \"0\"\n            },\n            {\n                \"marketing\": \"Ellsworth Smith\",\n                \"month\": \"February\",\n                \"revenue\": \"21.749\",\n                \"commission_percentage\": 0,\n                \"commission_nominal\": \"0\"\n            },\n            {\n                \"marketing\": \"Brooklyn Hagenes\",\n                \"month\": \"February\",\n                \"revenue\": \"30.107\",\n                \"commission_percentage\": 0,\n                \"commission_nominal\": \"0\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/payments?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/v1/payments?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/payments?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/v1/payments\",\n        \"per_page\": 12,\n        \"prev_page_url\": null,\n        \"to\": 6,\n        \"total\": 6\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get All Marketings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/marketings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"marketings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Marketings",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/marketings",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"marketings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 22:00:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Brooklyn Hagenes\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Ellsworth Smith\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Fatima Mills Jr.\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Tommie Anderson\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Warren Kuhn\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Cargo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/cargos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cargos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Cargo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/cargos",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cargos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 22:00:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"J&T\",\n            \"cargo_fee\": 15107\n        },\n        {\n            \"id\": 2,\n            \"name\": \"JNE\",\n            \"cargo_fee\": 11749\n        },\n        {\n            \"id\": 3,\n            \"name\": \"IdExpress\",\n            \"cargo_fee\": 18150\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Transaction",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/transactions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Transaction",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/transactions",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 22:00:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"payment\": {\n                \"id\": 6,\n                \"total_balance\": 15000,\n                \"grand_total\": 30107\n            },\n            \"transaction_number\": \"TRX001\",\n            \"date\": \"2025-02-01 21:24:59\"\n        },\n        {\n            \"id\": 4,\n            \"payment\": {\n                \"id\": 7,\n                \"total_balance\": 10000,\n                \"grand_total\": 21749\n            },\n            \"transaction_number\": \"TRX002\",\n            \"date\": \"2025-02-01 21:25:12\"\n        },\n        {\n            \"id\": 5,\n            \"payment\": {\n                \"id\": 8,\n                \"total_balance\": 20000,\n                \"grand_total\": 38150\n            },\n            \"transaction_number\": \"TRX003\",\n            \"date\": \"2025-02-01 21:25:22\"\n        },\n        {\n            \"id\": 6,\n            \"payment\": {\n                \"id\": 9,\n                \"total_balance\": 138000000,\n                \"grand_total\": 138015107\n            },\n            \"transaction_number\": \"TRX004\",\n            \"date\": \"2025-02-01 21:49:27\"\n        },\n        {\n            \"id\": 7,\n            \"payment\": {\n                \"id\": 10,\n                \"total_balance\": 80000000,\n                \"grand_total\": 80011749\n            },\n            \"transaction_number\": \"TRX005\",\n            \"date\": \"2025-02-01 21:49:45\"\n        },\n        {\n            \"id\": 8,\n            \"payment\": {\n                \"id\": 11,\n                \"total_balance\": 205000000,\n                \"grand_total\": 205015107\n            },\n            \"transaction_number\": \"TRX006\",\n            \"date\": \"2025-02-01 21:50:08\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
